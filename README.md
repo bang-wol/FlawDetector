@@ -1,110 +1,145 @@
+# 🕵🏻‍♂️ Flaw Detector
+<img width="700" alt="Flaw Detector" src="https://github.com/user-attachments/assets/aa8ef730-59ee-4feb-ba10-3a59a0a55bac" />
+
+<br/>
+
+## 프로젝트 개요
+**FlawDetector**는 AI 기반의 소스코드 보안 취약점 분석 및 해결 가이드 제공 솔루션입니다. SW 개발 환경에서 보안 취약점이 증가함에 따라, 이를 사전 탐지하고 해결 방안을 제공하여 보안 사고를 예방합니다.
+
+<br/>
+
+## MVP (최소 기능 제품)
+
+| 기능 | 설명 |
+|------|--------------------------------------------------|
+| **코드 보안 취약점 분석** | AI 분석을 통해 코드 내 잠재적인 보안 취약점을 감지 |
+| **보안 취약점 데이터 제공** | 취약점 데이터베이스(CVE, CNNVD 등) 정보를 반영하여 사용자에게 제공 |
+
+<br/>
+
+## 개발 기간
+2024.08.05 ~ 2024.09.20
 
 
-## ❓  Flaw Detector 가 뭐예요?
-- **Flaw Detector**는 **개발 중 발생할 수 있는 보안 취약점을 실시간으로 분석하고, 해결책을 제안**하는 AI 기반 보안 솔루션입니다. 
-- GitHub OAuth를 통해 사용자의 레포지토리와 연동하여 소스코드의 보안 문제를 탐지하고, 최신 취약점 정보를 바탕으로 해결책을 제공합니다.
-- 이 프로젝트는 사용자가 좀 더 안전한 소프트웨어를 개발할 수 있도록 지원합니다.
+<br/>
+
+## 기술 스택
+<p>
+   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+   <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
+   <img src="https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=Firebase&logoColor=white">
+   <img src="https://img.shields.io/badge/Llama3-0467DF?style=for-the-badge&logo=meta&logoColor=white">
+   <img src="https://img.shields.io/badge/Puppeteer-40B5A4?style=for-the-badge&logo=Puppeteer&logoColor=white">
+   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white">
+</p>
+
+<br/>
 
 
-## 🌐 웹사이트
-[Security-Vigilante](https://geekhub-gamma.vercel.app/)
+## 기능 정의 사항
+
+| 요구사항 명 | 페이지명 | 상세 설명 |
+|------------|---------|-----------------------------|
+| 랜딩 페이지 | `/` | 서비스 소개 및 가입 유도 |
+| 레포지토리 리스트 | `/repos` | GitHub 레포지토리 목록 표시 |
+| 코드 분석 페이지 | `/repos/:userName/:repoName` | 특정 코드 파일 선택 후 AI 보안 검사 실행 |
+| 프로필 페이지 | `/me` | 연동된 깃허브 계정 정보, 스크랩한 아티클 조회 |
+| 취약점 DB | `/vulnerability-db` | 최신 보안 취약점 리스트 제공(크롤링된 데이터) |
+
+<br/>
+
+## 정보 구조도
+<img width="600" alt="정보 구조도" src="https://github.com/user-attachments/assets/734e453a-8f5b-4308-8727-e59ea57506c4" />
+
+<br/>
+
+## 팀원 소개 및 역할
+
+<table width="100%">
+  <tbody>
+    <tr>
+      <td align="center" width="20%">
+        <a href="https://github.com/chaduhwan"><img src="https://avatars.githubusercontent.com/u/137901354?v=4" width="100px;" alt="두환"/><br />
+</a><b>두환</b>
+      </td>
+      <td align="center" width="20%>
+        <a href="https://github.com/sockki"><img src="https://avatars.githubusercontent.com/u/93645009?v=4" width="100px;" alt="민준"/><br />
+</a><b>민준</b>
+      </td>
+      <td align="center" width="20%">
+        <a href="https://github.com/bang-wol"><img src="https://avatars.githubusercontent.com/u/102708198?v=4" width="100px;" alt="수빈"/><br />
+</a><b>수빈</b>
+      </td>
+      <td align="center" width="20%">
+        <a href="https://github.com/printjin-gmailcom"><img src="https://avatars.githubusercontent.com/u/161997875?v=4" width="100px;" alt="연진"/><br /></a><b>연진</b>
+      </td>
+      <td align="center" width="20%>
+        <a href="https://github.com/Young2un"><img src="https://avatars.githubusercontent.com/u/132687752?v=4" width="100px;" alt="영은"/><br /></a><b>영은</b>
+      </td>
+    </tr>
+    <tr>
+       <td align="center">코드 취약점 검사</td>
+       <td align="center">보안 취약점 정보 크롤링</td>
+       <td align="center">GitHub 연동, 프로필 페이지</td>
+       <td align="center">랜딩 페이지</td>
+       <td align="center">랜딩 페이지, 취약점 정보 스크랩, 챗봇 구현</td>
+    </tr>
+  </tbody>
+</table>
 
 
-## 🙋‍♂️ 어떻게 사용하나요?
-1. GitHub OAuth로 로그인하세요.
-2. 분석할 레포지토리를 선택하세요.
-3. FlawDetector가 자동으로 소스코드를 분석하여 보안 취약점을 찾아냅니다.
-4. 실시간으로 취약점 정보와 해결책을 제공받으세요.
+<br/>
 
+## 프로젝트 소개 및 시연
 
-## 🛠 주요 기능
-1. **소스코드 보안 취약점 분석**: GitHub 레포지토리의 소스코드에서 실시간 보안 취약점 분석.
-2. **취약점 정보 제공**: 최신 보안 취약점 데이터베이스를 기반으로 취약점 및 해결책 제공.
-3. **취약점 DB 연동**: 최신 보안 취약점 정보를 취합하여 제공.
+### ◼ 랜딩 페이지
+<img src="https://raw.githubusercontent.com/bang-wol/FlawDetector/develop/public/images/demo5.gif" width="800px">
 
-
-## 💻 설치 및 실행 방법
-### 설치 절차
-1. 리포지토리를 클론합니다:
-   ```bash
-   git clone https://github.com/security-vigilante/geekhub.git
-   cd geekhub
-   ```
-
-2. 의존성을 설치합니다:
-   ```bash
-   pnpm install
-   ```
-
-3. 개발 서버를 실행합니다:
-   ```bash
-   pnpm run dev
-   ```
-
-4. 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 FlawDetector를 실행합니다.
-
-
-## 🛠 기술 스택
-- **프론트엔드**: Next.js, TailwindCSS
-- **백엔드**: Firebase Functions
-- **배포**: Vercel
-- **데이터베이스**: Firebase Firestore
-- **AI 모델**: Llama 3
-
-
-## 📝 개발자 소개
-**Security-Vigilante 개발 팀**
-
-- **두환**
-  - 📧 e-mail: [enghks2973@naver.com](mailto:enghks2973@naver.com)
-  - 🐈‍⬛ GitHub: [chaduhwan](https://github.com/printjin-gmailcom)
-  - 🪩 디스코드: hwandu
-
-- **민준**
-  - 📧 e-mail: [poohct327@gmail.com](mailto:poohct327@gmail.com)
-  - 🐈‍⬛ GitHub: [sockki](https://github.com/sockki)
-  - 🪩 디스코드: poohct327@naver.com
-
-- **수빈**
-  - 📧 e-mail: [room9light@naver.com](mailto:room9light@naver.com)
-  - 🐈‍⬛ GitHub: [bang-wol](https://github.com/bang-wol)
-  - 🪩 디스코드: .bangsubeen
-  - 🔥 Firebase: [milk011922@gmail.com](mailto:milk011922@gmail.com)
-
-- **연진**
-  - 📧 e-mail: [printjin@gmail.com](mailto:printjin@gmail.com)
-  - 🐈‍⬛ GitHub: [printjin-gmailcom](https://github.com/printjin-gmailcom)
-  - 🪩 디스코드: print_yeonjin
-
-- **영은**
-  - 📧 e-mail: [popduddms@gmail.com](mailto:popduddms@gmail.com)
-  - 🐈‍⬛ GitHub: [Young2un](https://github.com/Young2un)
-  - 🪩 디스코드: youngeun___
-
-
-## 🐞 버그 및 디버그
-- **버그 리포트**: 버그가 발견되면 GitHub 이슈 페이지를 통해 보고해 주세요.  
-  [버그 리포트](https://github.com/security-vigilante/geekhub/issues)
+- 배경 인터렉션(`AOS`, `Murquee`) 적용
+- `GitHub Oauth` 및 `NextAuth`를 활용한 로그인
   
-- **디버깅**: ESLint와 Prettier 설정을 통해 코드 스타일 유지 및 자동 오류 수정.
+<br/>
 
+### ◼ My 저장소
+<img src="https://raw.githubusercontent.com/bang-wol/FlawDetector/develop/public/images/demo4.gif" width="800px">
 
-## 📄 저작권 및 사용권 정보
-이 프로젝트는 []에 따라 배포됩니다. 자유롭게 사용 및 수정할 수 있지만, 저작권 고지를 유지해야 합니다.
+- `GitHub REST API`를 활용한 저장소 관리
+- 최근 방문한 파일, 북마크, 정렬, 필터, 페이지네이션 기능 제공
 
+<br/>
 
-## 📚 참고 및 출처
-- [Next.js Documentation](https://nextjs.org/docs)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs)
-- [GitHub REST API Documentation](https://docs.github.com/en/rest)
+### ◼ 코드 취약점 검사
+<img src="https://raw.githubusercontent.com/bang-wol/FlawDetector/develop/public/images/demo3.gif" width="800px">
 
+- `Llama3`를 활용한 코드 취약점 검사
+- 단일 검사, 다중 검사 기능
+- 검사 상태 및 결과 제공 
 
-## 🔄 버전 및 업데이트 정보
-- **현재 버전**: 1.0.0
-- **최신 업데이트**: 2024년 9월
-- **다음 업데이트 예정 기능**: 미정
+<br/>
 
-## ❓ FAQ
-**Q1: 
+### ◼ 취약점 DB
+<img src="https://raw.githubusercontent.com/bang-wol/FlawDetector/develop/public/images/demo2.gif" width="800px">
 
-**Q2: 
+- `Puppeteer`를 활용한 크롤링
+- `Llama3`로 자동 번역 기능
+- 검색, 토픽 기능 제공
+- 챗봇을 통해 추가 정보 제공
+
+<br/>
+
+### ◼ 프로필 페이지 & 문의하기
+<img src="https://raw.githubusercontent.com/bang-wol/FlawDetector/develop/public/images/demo1.gif" width="800px">
+
+- 개인 정보 확인
+- 스크랩한 아티클 확인 가능
+- `React Hook From`을 활용한 유효성 검사 적용
+- `Nodemailer`를 사용하여 이메일 문의 기능 제공
+
+<br/>
+
+## 참고자료
+
+- [CVE - 미국 취약점 데이터베이스](https://cve.mitre.org/)  
+- [CNNVD - 중국 취약점 데이터베이스](https://www.cnnvd.org.cn/)  
+- [VulDB - 보안 취약점 데이터베이스](https://vuldb.com/)  
+- [OWASP Top Ten - 웹 보안 취약점](https://owasp.org/www-project-top-ten/)  
